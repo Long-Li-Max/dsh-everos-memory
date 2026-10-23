@@ -1,0 +1,23 @@
+# 依赖与构建产物（node_modules 不提交，npm install 自动安装）
+node_modules/
+package-lock.json
+
+# npm 打包产物
+*.tgz
+.npm-cache/
+
+# 运行时产物与本地数据
+*.log
+logs/
+everos.toml
+.venv/
+venv/
+*.tmp-everos
+
+# 本地环境与密钥
+.env
+.env.*
+!.env.example
+.npmrc
+.npmrc.*
+secrets/

@@ -1,0 +1,17 @@
+# EverOS 记忆 bundle patch：一条 row 同时挂「记忆引擎（内置）」与「管理面板」。
+# 面板的服务地址 / 启动命令 / 数据目录都从这里的记忆配置派生，只写一份。
+#
+# 本文件只放"开箱即用"的最小默认值，不含任何作者本机路径：
+#   1. 先运行 scripts/setup-everos.ps1 安装 EverOS 服务（Windows）；
+#   2. 打开 DSH → EverOS 记忆 → 「设置」，把脚本打印的 everosDir / startCommand /
+#      panelLogPath 填进去（写入 profile 的 cordis.patch.yml，按 row id everos 覆盖）；
+#   3. 点「启动」，状态变绿后记忆开始工作。
+#
+# 也可以直接用环境变量提供默认值：EVEROS_DIR（服务根目录）、EVEROS_EXE（可执行文件）、
+# EVEROS_DEBUG_LOG（诊断日志路径，留空关闭）。
+- insert:
+    - id: everos
+      name: '@lorenzo__li/dsh-everos-memory'
+      config:
+        baseUrl: 'http://127.0.0.1:8000'
+        autoStart: false

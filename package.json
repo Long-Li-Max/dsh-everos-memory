@@ -1,0 +1,62 @@
+{
+  "name": "@lorenzo__li/dsh-everos-memory",
+  "version": "1.0.1",
+  "description": "EverOS long-term memory for DeepSeek Harness: automatic recall/capture plus an in-app management panel and service manager.",
+  "type": "module",
+  "license": "MIT",
+  "author": "lorenzo__li",
+  "homepage": "https://github.com/Long-Li-Max/dsh-everos-memory#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Long-Li-Max/dsh-everos-memory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Long-Li-Max/dsh-everos-memory/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "everos",
+    "memory",
+    "agent-memory",
+    "plugin"
+  ],
+  "icon": "icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib/*.js",
+    "client.js",
+    "vendor/**",
+    "scripts/**",
+    "docs/**",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@deepseek-ai/cosmokit": "^1.8.6",
+    "@deepseek-ai/schemastery": "^3.18.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.1-rc.2"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
+}
